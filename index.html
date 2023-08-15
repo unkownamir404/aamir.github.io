@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Warming Presentation</title>
+    <style>
+        body {
+            cursor: url('cursor.png'), auto;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: white;
+        }
+
+        .universe-background {
+            width: 100%;
+            height: 100vh;
+            background: url('https://www.bing.com/th/id/OGC.99f95ee41c3def28268cc3877f103daf?pid=1.7&rurl=https%3a%2f%2fmedia.giphy.com%2fmedia%2fiMMfCfD9TLuCY%2fgiphy.gif&ehk=e8wR4HGpmi%2bYtL9TfFLV8U9g3dob9P3fP85zaEPFhDM%3d') center/cover no-repeat;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            opacity: 0.7;
+        }
+
+        header {
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        h1 {
+            font-size: 36px;
+            margin: 0;
+            color: #bd00bd;
+        }
+
+        main {
+            padding: 2rem;
+        }
+
+        .slide {
+            margin-bottom: 3rem;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        h2 {
+            font-size: 28px;
+            color: #bd00bd;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem 0;
+            border-top: 2px solid #bd00bd;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #bd00bd;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #bd00bd;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="universe-background"></div>
+    <header>
+        <h1>Understanding Global Warming</h1>
+    </header>
+    <main>
+        <section class="slide">
+            <h2>Introduction</h2>
+            <p>Global warming refers to the long-term increase in Earth's average surface temperature due to human
+                activities, primarily the emission of greenhouse gases.</p>
+        </section>
+        <section class="slide">
+            <h2>Causes</h2>
+            <p>Human activities such as burning fossil fuels, deforestation, and industrial processes release carbon
+                dioxide and other greenhouse gases into the atmosphere, trapping heat and leading to global warming.</p>
+        </section>
+        <section class="slide">
+            <h2>Effects</h2>
+            <p>The consequences of global warming include rising sea levels, more frequent and severe heatwaves,
+                disruption of ecosystems, and endangerment of species.</p>
+        </section>
+        <section class="slide">
+            <h2>Mitigation</h2>
+            <p>Addressing global warming requires reducing greenhouse gas emissions, transitioning to renewable energy
+                sources, promoting sustainable practices, and fostering international cooperation.</p>
+        </section>
+        <section class="slide">
+            <h2>Solutions</h2>
+            <p>Efforts to combat global warming include increased energy efficiency, reforestation, carbon capture
+                technologies, and raising public awareness.</p>
+        </section>
+        <section class="slide">
+            <h2>Conclusion</h2>
+            <p>Global warming is a critical issue that demands collective action to protect our planet and future
+                generations. By understanding its causes, effects, and solutions, we can work towards a sustainable and
+                resilient future.</p>
+        </section>
+    </main>
+    <button id="explainButton">Explain English</button>
+    <button id="explainButtonGujarati">Explain Gujarati</button>
+
+    <script>
+        const speaking = false;
+
+        document.getElementById('explainButton').addEventListener('click', function ()
+        {
+            if (!speaking) {
+                speaking = true;
+                var message = new SpeechSynthesisUtterance("Let me explain global warming. Global warming refers to the long-term increase in Earth's average surface temperature due to human activities, primarily the emission of greenhouse gases.");
+                message.onend = function ()
+                {
+                    speaking = false;
+                };
+                window.speechSynthesis.speak(message);
+            }
+        });
+
+        document.getElementById('explainButtonGujarati').addEventListener('click', function ()
+        {
+            if (!speaking) {
+                speaking = true;
+                var message = new SpeechSynthesisUtterance("મને વૈશ્વિક તાપમાન સમજાવવું આપવું. વૈશ્વિક તાપમાન માનવ ક્રિયાઓના પ્રમુખ કારણે પ્રધાનરૂપે ગ્રીનહાઉસ ગેઝનો ઉત્સર્જન થતો મૃદાપૃષ્ઠનું વધેલું મહસૂસ થાય છે.");
+                message.onend = function ()
+                {
+                    speaking = false;
+                };
+                message.lang = "gu-IN";
+                window.speechSynthesis.speak(message);
+            }
+        });
+
+    </script>
+</body>
+
+</html>
